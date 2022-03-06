@@ -1,0 +1,119 @@
+.wrapper {
+  background: #f6f8ff;
+  padding: 16px;
+}
+
+.title {
+  font-family: "Modak", cursive;
+  font-weight: 400;
+  font-size: 400%;
+  text-align: center;
+}
+
+.container {
+  padding-top: 75px;
+  padding-bottom: 55px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.flexContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.flexItem {
+  padding: 20px;
+  border-radius: 14px;
+  background: #fff;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  -webkit-box-shadow: 0px 5px 20px #0000000d;
+  box-shadow: 0px 5px 20px #0000000d;
+}
+
+.flexItem:last-of-type {
+  margin-right: 0;
+}
+
+.flexItemTitle {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.flexItemDescription {
+  font-size: 75%;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.giftIconContainer,
+.funnelIconContainer,
+.pieIconContainer {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: -o-linear-gradient(45deg, #99e6ff, #25c8ff);
+  background: linear-gradient(45deg, #99e6ff, #25c8ff);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.funnelIconContainer {
+  background: -o-linear-gradient(45deg, #e493ff, #ca2cff);
+  background: linear-gradient(45deg, #e493ff, #ca2cff);
+}
+
+.pieIconContainer {
+  background: -o-linear-gradient(45deg, #ff93b9, #ff2f78);
+  background: linear-gradient(45deg, #ff93b9, #ff2f78);
+}
+
+.description {
+  font-size: 85%;
+  margin-bottom: 50px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media only screen and (max-width: 700px) {
+  .title {
+    font-size: 300%;
+  }
+  .description {
+    font-size: 80%;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .flexContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .title {
+    font-size: 220%;
+  }
+  .container {
+    padding-top: 50px;
+    padding-bottom: 35px;
+  }
+}

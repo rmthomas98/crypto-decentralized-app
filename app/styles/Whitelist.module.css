@@ -1,0 +1,106 @@
+.wrapper {
+  padding: 16px;
+  height: 100vh;
+  min-height: 600px;
+  width: 100%;
+  background-image: linear-gradient(#0000001f, #0000001f),
+    url("../public/images/fantasy.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 14px;
+  box-shadow: 0px 10px 30px #0000006b;
+  background: #00000083;
+  margin: auto;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.title {
+  font-weight: 600;
+  color: #fff;
+  font-size: 150%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.description,
+.smallDescription {
+  color: #fff;
+  text-align: center;
+  font-size: 80%;
+  font-weight: 500;
+  margin-top: 20px;
+  font-weight: 300;
+}
+
+.smallDescription {
+  font-size: 70%;
+}
+
+.countContainer {
+  width: 100%;
+  border-radius: 14px;
+  background: #ffffff2a;
+  padding: 20px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.countTitle {
+  font-size: 70%;
+  color: #ffffffab;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.count {
+  font-size: 150%;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+}
+
+.connectButton {
+  width: 100%;
+  border-radius: 50px;
+  padding: 12px;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  background: #ff22cfbe;
+  box-shadow: 0px 5px 15px #ff22cf88;
+  background-size: 200%;
+  background-position: left;
+  transition: 500ms all;
+  color: #fff;
+}
+
+.connectButton:hover {
+  background: #ff22cf;
+  box-shadow: 0px 5px 15px #ff22cfcc;
+  transform: scale(0.97);
+}
+
+.connectedAccount::after {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  height: 2px;
+  border-radius: 50px;
+  width: 50px;
+  background: #2294ff;
+  content: "";
+}
+
+.connectedAccount {
+  letter-spacing: 1px;
+}
