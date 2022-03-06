@@ -24,7 +24,7 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
     bool whitelistMint = false;
 
     constructor(string memory baseURI) ERC721("Unicorn Nodes", "UNCN") {
-      setBaseUri(baseURI);
+      setBaseURI(baseURI);
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
@@ -61,7 +61,7 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
       uint totalMinted = _tokenIds.current();
       require(totalMinted.add(_count) < maxSupply, "Not enough NFTs to mint");
       require(_count > 0, "You have to mint at least 1 NFT");
-      for (i = 0; i < _count; i++) {
+      for (uint i = 0; i < _count; i++) {
         _mintSingleNFT();
       }
     }
@@ -85,7 +85,7 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
       require(totalMinted.add(_count) < maxSupply, "Not enough NFTs to mint.");
       require(_count > 0 && _count <= maxPerMint, "Cannot mint specified number of NFTs.");
       require(msg.value >= price.mul(_count), "Not enough ether to purchase NFTs.");
-      for (i = 0; i < _count; i++) {
+      for (uint i = 0; i < _count; i++) {
         _mintSingleNFT();
       }
     }
@@ -102,7 +102,7 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
     }
 
     function withdraw() public payable onlyOwner {
-      uint balance = address(this).balance();
+      uint balance = address(this).balance;
       require(balance > 0, "No ether to withdraw");
       (bool success, ) = (msg.sender).call{value: balance}("");
       require(success, "Transfer failed.");
