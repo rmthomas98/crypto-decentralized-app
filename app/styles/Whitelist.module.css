@@ -1,8 +1,25 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .wrapper {
   padding: 16px;
   height: 100vh;
   min-height: 600px;
   width: 100%;
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#0000001f),
+      to(#0000001f)
+    ),
+    url("../public/images/fantasy.jpeg");
+  background-image: -o-linear-gradient(#0000001f, #0000001f),
+    url("../public/images/fantasy.jpeg");
   background-image: linear-gradient(#0000001f, #0000001f),
     url("../public/images/fantasy.jpeg");
   background-position: center;
@@ -13,11 +30,14 @@
   width: 100%;
   max-width: 500px;
   border-radius: 14px;
+  -webkit-box-shadow: 0px 10px 30px #0000006b;
   box-shadow: 0px 10px 30px #0000006b;
-  background: #00000083;
+  background: #000000a1;
   margin: auto;
   margin-top: 50px;
   padding: 20px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .title {
@@ -36,6 +56,7 @@
   font-weight: 500;
   margin-top: 20px;
   font-weight: 300;
+  line-height: 1.5;
 }
 
 .smallDescription {
@@ -45,7 +66,7 @@
 .countContainer {
   width: 100%;
   border-radius: 14px;
-  background: #ffffff2a;
+  background: #ffffff18;
   padding: 20px;
   margin: auto;
   margin-top: 30px;
@@ -65,6 +86,17 @@
   margin-top: 10px;
 }
 
+.address {
+  max-width: 320px;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  margin: auto;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 90%;
+}
+
 .buttonContainer {
   margin-top: 20px;
 }
@@ -77,16 +109,22 @@
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
   background: #ff22cfbe;
+  -webkit-box-shadow: 0px 5px 15px #ff22cf88;
   box-shadow: 0px 5px 15px #ff22cf88;
   background-size: 200%;
   background-position: left;
+  -webkit-transition: 500ms all;
+  -o-transition: 500ms all;
   transition: 500ms all;
   color: #fff;
 }
 
 .connectButton:hover {
   background: #ff22cf;
+  -webkit-box-shadow: 0px 5px 15px #ff22cfcc;
   box-shadow: 0px 5px 15px #ff22cfcc;
+  -webkit-transform: scale(0.97);
+  -ms-transform: scale(0.97);
   transform: scale(0.97);
 }
 
@@ -103,4 +141,77 @@
 
 .connectedAccount {
   letter-spacing: 1px;
+}
+
+.statusContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  content: "";
+  margin-right: 10px;
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
+  transition: 500ms;
+}
+
+.checkStatusBtn {
+  border: none;
+  border-radius: 50px;
+  background: #2294ffc0;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 75%;
+  -webkit-box-shadow: 0px 2px 8px #2294ff94;
+  box-shadow: 0px 2px 8px #2294ff94;
+  -webkit-transition: 500ms all;
+  -o-transition: 500ms all;
+  transition: 500ms all;
+  width: 101px;
+  height: 23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.checkStatusBtn:hover {
+  -webkit-box-shadow: 0px 2px 12px #2294ffd3;
+  box-shadow: 0px 2px 12px #2294ffd3;
+  background: #2294ff;
+  -webkit-transform: scale(0.97);
+  -ms-transform: scale(0.97);
+  transform: scale(0.97);
+}
+
+.greenBackground {
+  background: #38ff6a;
+  -webkit-box-shadow: 0px 0px 5px #38ff6aab;
+  box-shadow: 0px 0px 5px #38ff6aab;
+}
+
+.redBackground {
+  background: #ff4c4c;
+  -webkit-box-shadow: 0px 0px 5px #ff4c4ca4;
+  box-shadow: 0px 0px 5px #ff4c4ca4;
 }
