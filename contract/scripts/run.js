@@ -2,7 +2,7 @@ const { utils } = require("ethers");
 const { hrtime } = require("process");
 
 const main = async () => {
-  const baseTokenURI = "ipfs://QmZbWNKJPAjxXuNFSEaksCJVd1M6DaKQViJBYPK2BdpDEP/";
+  const baseTokenURI = "ipfs://QmTbeK2K7nsEVC4uxrxk7sfSmLMCSFeqahySzRbAKSxfuv/";
 
   // Get owner/deployer's wallet address
   const [owner] = await hre.ethers.getSigners();

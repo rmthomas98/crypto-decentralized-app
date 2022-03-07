@@ -7,7 +7,6 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
-
 contract UnicornNodes is ERC721Enumerable, Ownable {
     using SafeMath for uint256;
     using Counters for Counters.Counter;
@@ -78,7 +77,6 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
       require(_count > 0 && _count <= maxPerMint, "Cannot mint specified number of NFTs");
       require(msg.value >= price.mul(_count), "Not enough ether to purchase NFTs");
       require(recoverSigner(hash, signature) == owner(), "Address is not whitelisted.");
-
       for (uint i = 0; i < _count; i++) {
         _mintSingleNFT();
       }
