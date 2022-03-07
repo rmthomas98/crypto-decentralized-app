@@ -25,7 +25,6 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
 
     constructor(string memory baseURI) ERC721("Unicorn Nodes", "UNCN") {
       setBaseURI(baseURI);
-      _tokenIds.increment();
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
@@ -53,6 +52,11 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
       publicMint = false;
     }
 
+    function getSupply() public onlyOwner view returns (uint) {
+      uint supply = _tokenIds.current();
+      return supply;
+    }
+
     function recoverSigner(bytes32 hash, bytes memory signature) public pure returns (address) {
       bytes32 messageDigest = keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash));
       return ECDSA.recover(messageDigest, signature);
@@ -60,7 +64,7 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
 
     function devMint(uint _count) public onlyOwner {
       uint totalMinted = _tokenIds.current();
-      require(totalMinted.add(_count) <= maxSupply, "Not enough NFTs to mint");
+      require(totalMinted.add(_count) < maxSupply, "Not enough NFTs to mint");
       require(_count > 0, "You have to mint at least 1 NFT");
       for (uint i = 0; i < _count; i++) {
         _mintSingleNFT();
@@ -70,7 +74,7 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
     function preSaleMint(uint _count, bytes32 hash, bytes memory signature) public payable {
       uint totalMinted = _tokenIds.current();
       require(whitelistMint, "Presale is not active.");
-      require(totalMinted.add(_count) <= maxSupply, "Not enough NFTs to mint");
+      require(totalMinted.add(_count) < maxSupply, "Not enough NFTs to mint");
       require(_count > 0 && _count <= maxPerMint, "Cannot mint specified number of NFTs");
       require(msg.value >= price.mul(_count), "Not enough ether to purchase NFTs");
       require(recoverSigner(hash, signature) == owner(), "Address is not whitelisted.");
@@ -83,7 +87,7 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
     function mint(uint _count) public payable {
       uint totalMinted = _tokenIds.current();
       require(publicMint, "You cannot mint right now.");
-      require(totalMinted.add(_count) <= maxSupply, "Not enough NFTs to mint.");
+      require(totalMinted.add(_count) < maxSupply, "Not enough NFTs to mint.");
       require(_count > 0 && _count <= maxPerMint, "Cannot mint specified number of NFTs.");
       require(msg.value >= price.mul(_count), "Not enough ether to purchase NFTs.");
       for (uint i = 0; i < _count; i++) {
