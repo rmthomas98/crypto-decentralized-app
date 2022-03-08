@@ -22,7 +22,7 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
     bool publicMint = false;
     bool whitelistMint = false;
 
-    constructor(string memory baseURI) ERC721("Unicorn Nodes", "UNCN") {
+    constructor(string memory baseURI) ERC721("Unicorn Nodes", "CORNS") {
       setBaseURI(baseURI);
     }
 
