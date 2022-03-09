@@ -5,10 +5,10 @@ import { ethers } from "ethers";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {SiE, SiEthereum} from 'react-icons/si'
+import { SiEthereum } from 'react-icons/si'
 
 const abi = contract.abi;
-const contractAddress = "0x1B700aaD934A927662C7e407e990C37Aaeae56EF";
+const contractAddress = ''
 
 const Mint = () => {
   const [address, setAddress] = useState(null);
@@ -51,7 +51,6 @@ const Mint = () => {
       const provider = new ethers.providers.Web3Provider(ethereum);
       const signer = provider.getSigner();
       const nftContract = new ethers.Contract(contractAddress, abi, signer);
-
 
       // create transaction
       const transaction = await nftContract.preSaleMint(
