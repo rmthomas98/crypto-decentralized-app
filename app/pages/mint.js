@@ -3,15 +3,32 @@ import styles from "../styles/Mint.module.css";
 import contract from "../src/UnicornNodes.json";
 import { ethers } from "ethers";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {SiE, SiEthereum} from 'react-icons/si'
 
 const abi = contract.abi;
 const contractAddress = "0x1B700aaD934A927662C7e407e990C37Aaeae56EF";
 
 const Mint = () => {
   const [address, setAddress] = useState(null);
-  const [price, setPrice] = useState(0.05);
   const [count, setCount] = useState(1);
   const [supply, setSupply] = useState(null);
+
+  useEffect(() => {
+    const getSupply = async () => {
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        const nftContract = new ethers.Contract(contractAddress, abi, signer);
+  
+        const numMinted = await nftContract.totalSupply();
+        const totalSupply = parseInt(numMinted._hex, 16)
+        setSupply(totalSupply)
+    }
+    getSupply()
+  },[])
+
+  const notWhitelisted = () => toast.error('Address not whitelisted!')
 
   const handleConnectWallet = async () => {
     const { ethereum } = window;
@@ -22,27 +39,43 @@ const Mint = () => {
 
     if (accounts.length !== 0) {
       setAddress(accounts[0]);
-    } else {
-      ("no account found");
     }
   };
 
   const handleMint = async () => {
     const response = await axios.post("/api/sign-address", { address });
     if (response.status === 200) {
-      if (response.data === "address not found")
-        return alert("address not whitelisted");
+      if (response.data === "address not found") {
+        return notWhitelisted()
+      }
       const provider = new ethers.providers.Web3Provider(ethereum);
       const signer = provider.getSigner();
       const nftContract = new ethers.Contract(contractAddress, abi, signer);
 
-      await nftContract.preSaleMint(
-        1,
+
+      // create transaction
+      const transaction = await nftContract.preSaleMint(
+        count,
         response.data.hash,
         response.data.signature,
-        { value: ethers.utils.parseEther("0.05") }
-      );
+        { value: ethers.utils.parseEther(`${count * 0.05}`) })
+
+      // wait for transaction to be mined
+      const wait = transaction.wait()
+
+      // show message status
+      toast.promise(wait, {pending: count > 1 ? 'Minting Your Unicorns' : 'Minting Your Unicorn', 'error': 'Something went wrong!', 'success': 'Minted!'})
     }
+  };
+
+  const increment = () => {
+    if (count === 10) return;
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    if (count === 1) return;
+    setCount(count - 1);
   };
 
   const MintButton = () => {
@@ -65,23 +98,13 @@ const Mint = () => {
     );
   };
 
-  const increment = () => {
-    if (count === 10) return;
-    setCount(count + 1);
-  };
-
-  const decrement = () => {
-    if (count === 1) return;
-    setCount(count - 1);
-  };
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <p className={styles.title}>Mint a Unicorn</p>
         <div className={styles.supplyContainer}>
           <p className={styles.subTitle}>Unicorns Minted</p>
-          <p className={styles.supply}>100 / 5000</p>
+          <p className={styles.supply}>{supply} / 5000</p>
         </div>
         <div className={styles.supplyContainer}>
           <p className={styles.subTitle}>Mint Unicorns</p>
@@ -101,11 +124,18 @@ const Mint = () => {
             <p className={styles.address}>{address}</p>
           </div>
         ) : (
+          <>
           <p className={styles.subTitle}>No wallet connected</p>
+          <p className={styles.address}>Connect your wallet to mint!</p>
+          </>
         )}
-        <div></div>
+        <div className={styles.priceContainer}>
+          <p className={styles.price}>Total Price:</p>
+          <p className={styles.ethereumPrice}><SiEthereum size={24}/><span className={styles.currPrice}>{(0.05 * count).toFixed(2)}</span><span className={styles.eth}>ETH</span></p>
+        </div>
         {address ? <MintButton /> : <ConnectButton />}
       </div>
+      <ToastContainer />
     </div>
   );
 };
