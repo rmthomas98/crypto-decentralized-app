@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
-contract UnicornNodes is ERC721Enumerable, Ownable {
+contract UnicornNodeClub is ERC721Enumerable, Ownable {
     using SafeMath for uint256;
     using Counters for Counters.Counter;
 
@@ -15,6 +15,7 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
 
     uint public maxSupply = 5000;
     uint public price = 0.05 ether;
+    uint public preSalePrice = 0.03 ether;
     uint public maxPerMint = 10;
 
     string public baseTokenURI;
@@ -22,7 +23,7 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
     bool publicMint = false;
     bool whitelistMint = false;
 
-    constructor(string memory baseURI) ERC721("Unicorn Nodes", "CORNS") {
+    constructor(string memory baseURI) ERC721("Unicorn Node Club", "CORNS") {
       setBaseURI(baseURI);
     }
 
@@ -75,7 +76,7 @@ contract UnicornNodes is ERC721Enumerable, Ownable {
       require(whitelistMint, "Presale is not active.");
       require(totalMinted.add(_count) < maxSupply, "Not enough NFTs to mint");
       require(_count > 0 && _count <= maxPerMint, "Cannot mint specified number of NFTs");
-      require(msg.value >= price.mul(_count), "Not enough ether to purchase NFTs");
+      require(msg.value >= preSalePrice.mul(_count), "Not enough ether to purchase NFTs");
       require(recoverSigner(hash, signature) == owner(), "Address is not whitelisted.");
       for (uint i = 0; i < _count; i++) {
         _mintSingleNFT();

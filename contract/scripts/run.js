@@ -4,7 +4,9 @@ async function main() {
   const baseTokenURI = "ipfs://QmTbeK2K7nsEVC4uxrxk7sfSmLMCSFeqahySzRbAKSxfuv/";
 
   // Get contract that we want to deploy
-  const contractFactory = await hre.ethers.getContractFactory("UnicornNodes");
+  const contractFactory = await hre.ethers.getContractFactory(
+    "UnicornNodeClub"
+  );
 
   // Deploy contract with the correct constructor arguments
   const contract = await contractFactory.deploy(baseTokenURI);
