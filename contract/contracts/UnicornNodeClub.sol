@@ -15,7 +15,6 @@ contract UnicornNodeClub is ERC721Enumerable, Ownable {
 
     uint public maxSupply = 5000;
     uint public price = 0.05 ether;
-    uint public preSalePrice = 0.03 ether;
     uint public maxPerMint = 10;
 
     string public baseTokenURI;
@@ -76,7 +75,7 @@ contract UnicornNodeClub is ERC721Enumerable, Ownable {
       require(whitelistMint, "Presale is not active.");
       require(totalMinted.add(_count) < maxSupply, "Not enough NFTs to mint");
       require(_count > 0 && _count <= maxPerMint, "Cannot mint specified number of NFTs");
-      require(msg.value >= preSalePrice.mul(_count), "Not enough ether to purchase NFTs");
+      require(msg.value >= price.mul(_count), "Not enough ether to purchase NFTs");
       require(recoverSigner(hash, signature) == owner(), "Address is not whitelisted.");
       for (uint i = 0; i < _count; i++) {
         _mintSingleNFT();
@@ -100,9 +99,13 @@ contract UnicornNodeClub is ERC721Enumerable, Ownable {
       _tokenIds.increment();
     }
 
-    function tokenBalanceOfOwner(address _owner) external view returns (uint) {
+    function tokensOfOwner(address _owner) external view returns (uint[] memory) {
       uint tokenCount = balanceOf(_owner);
-      return tokenCount;
+      uint[] memory tokensId = new uint256[](tokenCount);
+      for (uint i = 0; i < tokenCount; i++) {
+        tokensId[i] = tokenOfOwnerByIndex(_owner, i);
+      }
+      return tokensId;
     }
 
     function withdraw() public payable onlyOwner {
