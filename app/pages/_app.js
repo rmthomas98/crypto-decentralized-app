@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Script from "next/script";
+import {useEffect} from 'react';
 
 const App = ({ Component, pageProps }) => {
   return (

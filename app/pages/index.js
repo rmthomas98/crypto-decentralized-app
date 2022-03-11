@@ -1,11 +1,6 @@
 import Head from "next/head";
-import Nav from "../components/Nav/Nav.js";
-import Banner from "../components/Banner.js";
-import About from "../components/About/About.js";
-import Utility from "../components/Utility/Utility.js";
-import Map from "../components/Map/Map.js";
-import Faq from "../components/Faq/Faq.js";
-import Footer from "../components/Footer/Footer.js";
+import unicorn from '../public/images/unicorn.png';
+import Image from 'next/image'
 
 const Home = () => {
   return (
@@ -38,13 +33,13 @@ const Home = () => {
           href="/favicon-16x16.png"
         />
       </Head>
-      <Nav />
-      <Banner />
-      <About />
-      <Utility />
-      <Map />
-      <Faq />
-      <Footer />
+
+      <div className="homeContainer">
+        <div className="container">
+        <Image src={unicorn} />
+        </div>
+      </div>
+
     </div>
   );
 };
