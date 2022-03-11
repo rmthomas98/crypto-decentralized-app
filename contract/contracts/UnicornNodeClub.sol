@@ -19,8 +19,8 @@ contract UnicornNodeClub is ERC721Enumerable, Ownable {
 
     string public baseTokenURI;
 
-    bool publicMint = false;
-    bool whitelistMint = false;
+    bool public publicMint = false;
+    bool public whitelistMint = false;
 
     constructor(string memory baseURI) ERC721("Unicorn Node Club", "CORNS") {
       setBaseURI(baseURI);
@@ -49,11 +49,6 @@ contract UnicornNodeClub is ERC721Enumerable, Ownable {
     function pause() public onlyOwner {
       whitelistMint = false;
       publicMint = false;
-    }
-
-    function getSupply() public onlyOwner view returns (uint) {
-      uint supply = _tokenIds.current();
-      return supply;
     }
 
     function recoverSigner(bytes32 hash, bytes memory signature) public pure returns (address) {

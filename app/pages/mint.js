@@ -17,7 +17,26 @@ const Mint = () => {
 
   const notWhitelisted = () => toast.error("Address not whitelisted!");
   const installMetamask = () => toast.error("Install Metamask");
+  const notEnoughEther = () => toast.error('Insufficient Funds');
+  const wrongNetwork = () => toast.error('Please swith to Rinkeby')
 
+  // get total supply on load
+  useEffect(() => {
+    const getSupply = async () => {
+      const provider = new ethers.providers.Web3Provider(ethereum);
+      const signer = provider.getSigner();
+      const nftContract = new ethers.Contract(contractAddress, abi, signer);
+
+      console.log(signer)
+
+      // fetch supply
+      const contractResponse = await nftContract.totalSupply();
+      setSupply(parseInt(contractResponse._hex, 16));
+    }
+    getSupply();
+  },[])
+
+  // connect wallet function
   const handleConnectWallet = async () => {
     const { ethereum } = window;
     if (!ethereum) return installMetamask;
@@ -28,6 +47,7 @@ const Mint = () => {
     }
   };
 
+  // minting function
   const handleMint = async () => {
     const response = await axios.post("/api/sign-address", { address });
     if (response.status === 200) {
@@ -38,12 +58,20 @@ const Mint = () => {
       const signer = provider.getSigner();
       const nftContract = new ethers.Contract(contractAddress, abi, signer);
 
+      // get balances
+      const balance = await provider.getBalance(address);
+      const weiValue = balance._hex;
+      const ethValue = ethers.utils.formatEther(weiValue)
+
+      // check if address has enough eth to perform transaction
+      if (ethValue < count * 0.04) return notEnoughEther(); 
+
       // create transaction
       const transaction = await nftContract.preSaleMint(
         count,
         response.data.hash,
         response.data.signature,
-        { value: ethers.utils.parseEther(`${count * 0.05}`) }
+        { value: ethers.utils.parseEther(`${count * 0.04}`) }
       );
 
       // wait for transaction to be mined
@@ -91,7 +119,7 @@ const Mint = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <p className={styles.title}>Mint a Unicorn</p>
+        <p className={styles.title}>Join the Unicorn Node Club!</p>
         <div className={styles.supplyContainer}>
           <p className={styles.subTitle}>Unicorns Minted</p>
           <p className={styles.supply}>{supply} / 5000</p>
@@ -120,11 +148,11 @@ const Mint = () => {
           </>
         )}
         <div className={styles.priceContainer}>
-          <p className={styles.price}>Total Price:</p>
+          <p className={styles.subTitle}>Total Price</p>
           <p className={styles.ethereumPrice}>
             <SiEthereum size={24} />
             <span className={styles.currPrice}>
-              {(0.05 * count).toFixed(2)}
+              {(0.04 * count).toFixed(2)}
             </span>
             <span className={styles.eth}>ETH</span>
           </p>
