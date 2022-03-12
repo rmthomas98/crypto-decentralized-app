@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { SiEthereum } from "react-icons/si";
 
 const abi = contract.abi;
-const contractAddress = "0xe01eca5374327Ea3a316b7036f2caa964Fb9991E";
+const contractAddress = "0x6E0B9b8D237Ff55a23BBaEf36A0F4e3A014bD304";
 
 const Mint = () => {
   const [address, setAddress] = useState(null);
@@ -17,8 +17,8 @@ const Mint = () => {
 
   const notWhitelisted = () => toast.error("Address not whitelisted!");
   const installMetamask = () => toast.error("Install Metamask");
-  const notEnoughEther = () => toast.error('Insufficient Funds');
-  const wrongNetwork = () => toast.error('Please swith to Rinkeby')
+  const notEnoughEther = () => toast.error("Insufficient Funds");
+  const wrongNetwork = () => toast.error("Please swith to Rinkeby");
 
   // get total supply on load
   useEffect(() => {
@@ -27,14 +27,14 @@ const Mint = () => {
       const signer = provider.getSigner();
       const nftContract = new ethers.Contract(contractAddress, abi, signer);
 
-      console.log(signer)
+      console.log(signer);
 
       // fetch supply
       const contractResponse = await nftContract.totalSupply();
       setSupply(parseInt(contractResponse._hex, 16));
-    }
+    };
     getSupply();
-  },[])
+  }, []);
 
   // connect wallet function
   const handleConnectWallet = async () => {
@@ -61,10 +61,10 @@ const Mint = () => {
       // get balances
       const balance = await provider.getBalance(address);
       const weiValue = balance._hex;
-      const ethValue = ethers.utils.formatEther(weiValue)
+      const ethValue = ethers.utils.formatEther(weiValue);
 
       // check if address has enough eth to perform transaction
-      if (ethValue < count * 0.04) return notEnoughEther(); 
+      if (ethValue < count * 0.04) return notEnoughEther();
 
       // create transaction
       const transaction = await nftContract.preSaleMint(
