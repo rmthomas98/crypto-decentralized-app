@@ -1,7 +1,7 @@
 const { utils } = require("ethers");
 
 async function main() {
-  const baseTokenURI = "ipfs://QmTbeK2K7nsEVC4uxrxk7sfSmLMCSFeqahySzRbAKSxfuv/";
+  const baseTokenURI = "ipfs://QmURNwHTkSJ4932zAyaQuE2XRPj5iLw84qmhFXQatBfHnf/";
 
   // Get contract that we want to deploy
   const contractFactory = await hre.ethers.getContractFactory(

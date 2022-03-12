@@ -13,7 +13,7 @@ contract UnicornNodeClub is ERC721Enumerable, Ownable {
 
     Counters.Counter private _tokenIds;
 
-    uint public maxSupply = 5000;
+    uint public constant maxSupply = 5000;
     uint public price = 0.05 ether;
     uint public maxPerMint = 10;
 
