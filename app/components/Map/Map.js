@@ -74,11 +74,10 @@ const Map = () => {
               className="vertical-timeline-element-subtitle"
               style={{ fontSize: 18 }}
             >
-              20 ETH Giveaway
+              ETH Giveaway
             </h4>
             <p style={{ marginTop: 2 }}>
-              Yes...you read that correctly, if we sellout, we will be giving
-              away 20 ETH to 10 lucky Unicorn NFT owners.
+              We will be doing an Ethereum giveaway to celebrate after the mint, total amount to be determined.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
