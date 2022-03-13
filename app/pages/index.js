@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Particles from "react-tsparticles";
+import Nav from "../components/Nav/Nav";
 
 const Home = () => {
   return (
@@ -32,12 +32,16 @@ const Home = () => {
           href="/favicon-16x16.png"
         />
       </Head>
-
+      <Nav />
       <div className="homeContainer">
         <div className="container">
           <p className="title">The Unicorn Node Club</p>
+          <p className="description">
+            Welcome frens, The Unicorn Node Club is a place where you can
+            generate passive income by winning weekly node giveaways!
+          </p>
           <div className="btnContainer">
-            <button className="viewMoreBtn">View More</button>
+            <button className="viewMoreBtn">Learn More</button>
           </div>
         </div>
       </div>
