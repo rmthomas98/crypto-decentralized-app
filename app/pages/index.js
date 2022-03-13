@@ -1,6 +1,5 @@
 import Head from "next/head";
-import unicorn from '../public/images/unicorn.png';
-import Image from 'next/image'
+import Particles from "react-tsparticles";
 
 const Home = () => {
   return (
@@ -36,10 +35,12 @@ const Home = () => {
 
       <div className="homeContainer">
         <div className="container">
-        <Image src={unicorn} />
+          <p className="title">The Unicorn Node Club</p>
+          <div className="btnContainer">
+            <button className="viewMoreBtn">View More</button>
+          </div>
         </div>
       </div>
-
     </div>
   );
 };

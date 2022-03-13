@@ -14,13 +14,43 @@ body {
 .homeContainer {
   width: 100%;
   height: 100vh;
-  background: #000;
   padding: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-image: linear-gradient(#000000, #0000001e),
+    url("../public/images/planet-bg.jpeg");
+  background-position: center right;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .container {
-  
+  padding-top: 200px;
+}
+
+.smallTitle {
+  color: #ff00b39d;
+  text-align: center;
+  font-weight: 600;
+  font-size: 90%;
+}
+
+.title {
+  font-size: 325%;
+  color: #fff;
+  text-align: center;
+  font-family: "Kaushan Script", cursive;
+  text-shadow: 0px 0px 10px #ff00b3;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.viewMoreBtn {
+  padding: 14px 40px;
+  border: none;
+  background: lightpink;
+  border-radius: 50px;
+  box-shadow: 0px 5px 0px 5px #ff00b3;
 }
