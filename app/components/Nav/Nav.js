@@ -87,7 +87,7 @@ const Nav = () => {
         </div>
         <div className={styles.btnContainer}>
           <a
-            href="https://twitter.com/UnicornNodesNFT"
+            href="https://twitter.com/UnicornNodeClub"
             target="_blank"
             rel="noreferrer"
             className={styles.twitterBtn}
@@ -178,7 +178,7 @@ const Nav = () => {
           </Link>
         </div>
         <a
-          href="https://twitter.com/UnicornNodesNFT"
+          href="https://twitter.com/UnicornNodeClub"
           target="_blank"
           rel="noreferrer"
           className={styles.twitterBtn}
