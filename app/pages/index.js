@@ -2,6 +2,7 @@ import Head from "next/head";
 import Nav from "../components/Nav/Nav";
 import Utility from "../components/Utility/Utility";
 import HowItWorks from "../components/HowItWorks/HowItWorks";
+import Map from '../components/Map/Map'
 import { FaDiscord, FaTwitter } from "react-icons/fa";
 import { GiSailboat } from "react-icons/gi";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
@@ -78,6 +79,7 @@ const Home = () => {
       <About />
       <Utility />
       <HowItWorks />
+      <Map />
     </div>
   );
 };
