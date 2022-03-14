@@ -1,9 +1,10 @@
 .wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 9999;
   padding: 16px;
+  background: black;
 }
 
 .container {
@@ -25,7 +26,13 @@
 
 .link {
   color: #fff;
-  font-size: 70%;
-  margin-right: 15px;
+  font-size: 80%;
+  margin-right: 20px;
   font-weight: 500;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.link:hover {
+  color: #ff00b3;
 }

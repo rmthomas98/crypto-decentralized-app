@@ -1,0 +1,52 @@
+.wrapper {
+  padding: 50px 16px;
+  padding-bottom: 75px;
+  background: linear-gradient(45deg, #30004d, #1b1b1b);
+}
+
+.header {
+  font-family: "Bungee", cursive;
+  font-size: 220%;
+  color: #fff;
+  text-align: center;
+}
+
+.subHeader {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.stepContainer {
+  margin-top: 30px;
+}
+
+.step {
+  color: #ff00b3;
+  font-weight: 700;
+  font-size: 130%;
+  letter-spacing: 1px;
+}
+
+.stepTitle {
+  color: #fff;
+  font-size: 110%;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+.stepDescription {
+  color: #fff;
+  font-weight: 200;
+  font-size: 90%;
+  margin-top: 15px;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+}

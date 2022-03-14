@@ -7,10 +7,10 @@ const Nav = () => {
         <p className={styles.navTitle}>UnicornNodeClub</p>
         <div className={styles.linkContainer}>
           <p className={styles.link}>About</p>
-          <p className={styles.link}>Utility</p>
+          <p className={styles.link}>Tokenomics</p>
           <p className={styles.link}>How it works</p>
           <p className={styles.link}>Roadmap</p>
-          <p className={styles.link}>Faq</p>
+          <p className={styles.link}>FAQ</p>
         </div>
       </div>
     </div>
