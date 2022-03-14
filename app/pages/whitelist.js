@@ -99,7 +99,7 @@ const WhiteList = () => {
         </p>
         <div className={styles.countContainer}>
           <p className={styles.countTitle}>Current Count</p>
-          <p className={styles.count}>{count} / 500</p>
+          <p className={styles.count}>{count} / 200</p>
         </div>
         <div className={styles.description}>
           {address ? (
