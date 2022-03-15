@@ -3,7 +3,10 @@
   padding-right: 16px;
   padding-top: 75px;
   padding-bottom: 100px;
-  background: #000;
+  background-image: linear-gradient(#000000d5, #000000a2),
+    url("../../public/images/map-bg.jpeg");
+  background-position: center;
+  background-size: cover;
 }
 
 .header {
