@@ -4,10 +4,10 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { GiUnicorn } from "react-icons/gi";
+import { GiUnicorn, GiStakesFence } from "react-icons/gi";
 import { FaEthereum } from "react-icons/fa";
 import { MdLoop } from "react-icons/md";
-import { AiFillBank } from "react-icons/ai";
+import { AiFillBank, AiFillGift } from "react-icons/ai";
 
 const Map = () => {
   return (
@@ -26,7 +26,7 @@ const Map = () => {
             }}
             contentStyle={{
               borderRadius: 14,
-              background: "#71ffff31",
+              background: "#00000031",
               border: "1px solid #71ffff",
               backdropFilter: "blur(5px)",
               boxShadow: "0px 0px 30px #71ffff51",
@@ -60,7 +60,7 @@ const Map = () => {
             }}
             contentStyle={{
               borderRadius: 14,
-              background: "#a94eff31",
+              background: "#00000031",
               border: "1px solid #a94eff",
               backdropFilter: "blur(5px)",
               boxShadow: "0px 0px 30px #a94eff71",
@@ -94,7 +94,7 @@ const Map = () => {
             }}
             contentStyle={{
               borderRadius: 14,
-              background: "#4aff9531",
+              background: "#00000031",
               border: "1px solid #4aff95",
               backdropFilter: "blur(5px)",
               boxShadow: "0px 0px 30px #4aff9551",
@@ -119,7 +119,7 @@ const Map = () => {
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            icon={<GiUnicorn />}
+            icon={<AiFillGift />}
             iconStyle={{
               background: "#ffffff31",
               color: "#ff8c4a",
@@ -128,7 +128,7 @@ const Map = () => {
             }}
             contentStyle={{
               borderRadius: 14,
-              background: "#ff8c4a31",
+              background: "#00000031",
               border: "1px solid #ff8c4a",
               backdropFilter: "blur(5px)",
               boxShadow: "0px 0px 30px #ff8c4a51",
@@ -163,7 +163,7 @@ const Map = () => {
             }}
             contentStyle={{
               borderRadius: 14,
-              background: "#ff4a4a31",
+              background: "#00000031",
               border: "1px solid #ff4a4a",
               backdropFilter: "blur(5px)",
               boxShadow: "0px 0px 30px #ff4a4a51",
@@ -188,6 +188,39 @@ const Map = () => {
               (more info soon)
             </p>
           </VerticalTimelineElement>
+          {/* <VerticalTimelineElement
+            icon={<GiStakesFence />}
+            iconStyle={{
+              background: "#ffffff31",
+              color: "#ff00c3",
+              backdropFilter: "blur(5px)",
+              boxShadow: "none",
+            }}
+            contentStyle={{
+              borderRadius: 14,
+              background: "#00000031",
+              border: "1px solid #ff00c3",
+              backdropFilter: "blur(5px)",
+              boxShadow: "0px 0px 30px #ff00c351",
+            }}
+            contentArrowStyle={{ borderRight: "7px solid #ff00c3" }}
+          >
+            <h3
+              className="vertical-timeline-element-title"
+              style={{ color: "#fff", fontWeight: 600 }}
+            >
+              Phase 6
+            </h3>
+            <h4
+              className="vertical-timeline-element-subtitle"
+              style={{ color: "#fff", fontWeight: 400 }}
+            >
+              NFT Staking
+            </h4>
+            <p style={{ color: "#fff", fontWeight: 300 }}>
+              We will be launching our own ERC20 token. You will be able to stake your Unicorn to make passive income. The more unicorns you own, the more earning potential you will have.
+            </p>
+          </VerticalTimelineElement> */}
         </VerticalTimeline>
       </div>
     </div>

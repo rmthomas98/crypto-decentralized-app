@@ -15,7 +15,7 @@ import Marquee from "react-fast-marquee";
 const About = () => {
   return (
     <div className={styles.wrapper} id="about">
-      <p className={styles.header}>About Unicorn Node Club</p>
+      <p className={styles.header}>About</p>
       <div className={styles.container}>
         <p className={styles.description}>
           The Unicorn Node Club is a collection of 5,000 unique Unicorns that
