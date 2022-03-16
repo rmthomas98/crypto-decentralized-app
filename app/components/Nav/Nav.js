@@ -67,7 +67,6 @@ const Nav = () => {
           <ScrollLink smooth to="faq" offset={-57} className={styles.link}>
             FAQ
           </ScrollLink>
-<<<<<<< HEAD
           <Link href="/whitelist">
             <a className={styles.link}>WL</a>
           </Link>
@@ -91,8 +90,6 @@ const Nav = () => {
             <FaDiscord style={{ marginRight: 5 }} size={16} />
             Discord
           </a>
-=======
->>>>>>> test
         </div>
         {isActive ? (
           <IoMdClose
@@ -191,7 +188,6 @@ const Nav = () => {
             Twitter
           </a>
         </div>
-<<<<<<< HEAD
         <a
           href="https://twitter.com/UnicornNodeClub"
           target="_blank"
@@ -227,8 +223,6 @@ const Nav = () => {
           Discord
         </a>
         <div style={{ marginBottom: 30 }}></div>
-=======
->>>>>>> test
       </div>
     </div>
   );
