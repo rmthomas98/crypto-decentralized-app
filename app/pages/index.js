@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div>
       <Head>
-        <title>Unicorn Nodes NFT</title>
+        <title>Unicorn Node Club</title>
         <meta
           name="description"
           content="The Unicorn Node Club is a collection of 5,000 unique NFTs that are living on the ETH blockchain. Mint a Unicorn NFT, get exclusive access to weekly giveaways."
