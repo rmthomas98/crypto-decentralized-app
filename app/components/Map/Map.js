@@ -81,14 +81,9 @@ const Map = () => {
             >
               ETH Giveaway
             </h4>
-<<<<<<< HEAD
-            <p style={{ marginTop: 2 }}>
-              We will be doing an Ethereum giveaway to celebrate after the mint, total amount to be determined.
-=======
             <p style={{ color: "#fff", fontWeight: 300 }}>
               We will be doing an Ethereum giveaway to celebrate after the mint,
               total amount to be determined.
->>>>>>> test
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
