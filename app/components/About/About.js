@@ -38,6 +38,7 @@ const About = () => {
             height={300}
             width={300}
             alt="Unicorn NFT"
+            priority
           />
         </div>
         <div className={styles.imageContainer}>
@@ -47,6 +48,7 @@ const About = () => {
             height={300}
             width={300}
             alt="Unicorn NFT"
+            priority
           />
         </div>
         <div className={styles.imageContainer}>
@@ -56,6 +58,7 @@ const About = () => {
             height={300}
             width={300}
             alt="Unicorn NFT"
+            priority
           />
         </div>
         <div className={styles.imageContainer}>
@@ -65,6 +68,7 @@ const About = () => {
             height={300}
             width={300}
             alt="Unicorn NFT"
+            priority
           />
         </div>
         <div className={styles.imageContainer}>
@@ -74,6 +78,7 @@ const About = () => {
             height={300}
             width={300}
             alt="Unicorn NFT"
+            priority
           />
         </div>
         <div className={styles.imageContainer}>
@@ -83,6 +88,7 @@ const About = () => {
             height={300}
             width={300}
             alt="Unicorn NFT"
+            priority
           />
         </div>
         <div className={styles.imageContainer}>
@@ -92,6 +98,7 @@ const About = () => {
             height={300}
             width={300}
             alt="Unicorn NFT"
+            priority
           />
         </div>
         <div className={styles.imageContainer}>
@@ -101,6 +108,7 @@ const About = () => {
             height={300}
             width={300}
             alt="Unicorn NFT"
+            priority
           />
         </div>
         <div className={styles.imageContainer}>
@@ -110,6 +118,7 @@ const About = () => {
             height={300}
             width={300}
             alt="Unicorn NFT"
+            priority
           />
         </div>
         <div className={styles.imageContainer}>
@@ -119,6 +128,7 @@ const About = () => {
             height={300}
             width={300}
             alt="Unicorn NFT"
+            priority
           />
         </div>
       </Marquee>
