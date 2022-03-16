@@ -1,22 +1,15 @@
 import styles from "./Nav.module.css";
-import { AiOutlineTwitter } from "react-icons/ai";
-import { FaDiscord } from "react-icons/fa";
 import useScrollPosition from "@react-hook/window-scroll";
-import { CgMenuGridO } from "react-icons/cg";
-import { useEffect, useState } from "react";
-import { BiExitFullscreen } from "react-icons/bi";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { Link as ScrollLink, animateScroll } from "react-scroll";
+import { MdOutlineMenu } from "react-icons/md";
+import { IoMdClose } from "react-icons/io";
+import { useState, useEffect } from "react";
+import { FaDiscord, FaTwitter } from "react-icons/fa";
 import { useWindowWidth } from "@react-hook/window-size";
-import Link from "next/link";
 
 const Nav = () => {
-  // get scroll position
   const scrollY = useScrollPosition(60);
-
-  // burger menu
   const [isActive, setIsActive] = useState(false);
-
-  // get window width
   const width = useWindowWidth();
 
   // check for width change
@@ -26,61 +19,55 @@ const Nav = () => {
     if (width >= 800) setIsActive(false);
   }, [width]);
 
-  const handleTitleClick = () => {
-    setIsActive(false);
-    scroll.scrollToTop();
-  };
-
   return (
     <div
       className={styles.wrapper}
       style={
-        scrollY > 10
-          ? { boxShadow: "0px 3px 10px #00000031" }
-          : { boxShadow: "none" }
+        scrollY > 10 || isActive
+          ? { borderBottom: "1px solid #ffffff1f" }
+          : { borderBottom: "1px solid transparent" }
       }
     >
       <div className={styles.container}>
-        <p className={styles.title} onClick={handleTitleClick}>
-          Unicorn Nodes
+        <p
+          onClick={() => animateScroll.scrollToTop()}
+          className={styles.navTitle}
+          style={{ cursor: "pointer" }}
+        >
+          UnicornNodeClub
         </p>
         <div className={styles.linkContainer}>
           <ScrollLink
             to="about"
             smooth={true}
-            style={{ marginRight: 20 }}
-            offset={-71}
+            offset={-57}
             className={styles.link}
           >
             About
           </ScrollLink>
           <ScrollLink
-            to="utility"
-            smooth={true}
-            offset={-71}
-            style={{ marginRight: 20 }}
+            to="tokenomics"
+            smooth
+            offset={-57}
             className={styles.link}
           >
-            Utility
+            Tokenomics
           </ScrollLink>
           <ScrollLink
-            to="map"
             smooth
-            offset={-71}
-            style={{ marginRight: 20 }}
+            to="how-it-works"
+            offset={-57}
             className={styles.link}
           >
-            Map
+            How it works
           </ScrollLink>
-          <ScrollLink
-            to="faq"
-            smooth
-            offset={-71}
-            className={styles.link}
-            style={{ marginRight: 20 }}
-          >
+          <ScrollLink smooth to="map" offset={-57} className={styles.link}>
+            Roadmap
+          </ScrollLink>
+          <ScrollLink smooth to="faq" offset={-57} className={styles.link}>
             FAQ
           </ScrollLink>
+<<<<<<< HEAD
           <Link href="/whitelist">
             <a className={styles.link}>WL</a>
           </Link>
@@ -104,79 +91,107 @@ const Nav = () => {
             <FaDiscord style={{ marginRight: 5 }} size={16} />
             Discord
           </a>
+=======
+>>>>>>> test
         </div>
-        {!isActive ? (
-          <CgMenuGridO
-            className={styles.menu}
-            onClick={() => setIsActive(true)}
+        {isActive ? (
+          <IoMdClose
+            className={styles.close}
+            color="#fff"
+            onClick={() => setIsActive(false)}
           />
         ) : (
-          <BiExitFullscreen
+          <MdOutlineMenu
+            color="#fff"
             className={styles.menu}
-            style={{ transform: "rotate(45deg)" }}
-            onClick={() => setIsActive(false)}
+            onClick={() => setIsActive(true)}
           />
         )}
       </div>
       <div
-        className={styles.dropDownMenu}
-        style={{
-          top: width > 480 ? 71 : 56,
-          maxHeight: isActive ? 500 : 0,
-          transition: isActive ? "1s ease" : "500ms ease",
-        }}
+        className={styles.dropdownMenu}
+        style={
+          isActive
+            ? { maxHeight: 551, paddingTop: 20, opacity: 1 }
+            : { maxHeight: 0, paddingTop: 0, opacity: 0 }
+        }
       >
-        <div className={styles.dropDownLinkContainer}>
-          <ScrollLink
-            to="about"
-            offset={width > 480 ? -71 : -56}
-            smooth
-            onClick={() => setIsActive(false)}
-            className={styles.dropDownLink}
+        <ScrollLink
+          to="about"
+          smooth
+          offset={-57}
+          className={styles.dropdownLink}
+          onClick={() => setIsActive(false)}
+        >
+          About
+        </ScrollLink>
+        <ScrollLink
+          to="tokenomics"
+          smooth
+          offset={-57}
+          className={styles.dropdownLink}
+          onClick={() => setIsActive(false)}
+        >
+          Tokenomics
+        </ScrollLink>
+        <ScrollLink
+          to="how-it-works"
+          smooth
+          offset={-57}
+          className={styles.dropdownLink}
+          onClick={() => setIsActive(false)}
+        >
+          How It Works
+        </ScrollLink>
+        <ScrollLink
+          to="map"
+          smooth
+          offset={-57}
+          className={styles.dropdownLink}
+          onClick={() => setIsActive(false)}
+        >
+          Roadmap
+        </ScrollLink>
+        <ScrollLink
+          to="faq"
+          smooth
+          offset={-57}
+          className={styles.dropdownLink}
+          onClick={() => setIsActive(false)}
+        >
+          Faq
+        </ScrollLink>
+        <div
+          className={styles.btnContainer}
+          style={{ margin: "auto", marginTop: 10 }}
+        >
+          <a
+            href="https://discord.gg/TUHrMFAV"
+            rel="noreferrer"
+            target="_blank"
+            className="subBtn"
+            style={{ width: 200, justifyContent: "center" }}
           >
-            About
-          </ScrollLink>
+            <FaDiscord style={{ marginRight: 5 }} />
+            Discord
+          </a>
         </div>
-        <div className={styles.dropDownLinkContainer}>
-          <ScrollLink
-            to="utility"
-            offset={width > 480 ? -71 : -56}
-            smooth
-            onClick={() => setIsActive(false)}
-            className={styles.dropDownLink}
+        <div
+          className={styles.btnContainer}
+          style={{ margin: "auto", marginTop: 20, marginBottom: 20 }}
+        >
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://twitter.com/UnicornNodeClub"
+            className="subBtn"
+            style={{ width: 200, justifyContent: "center" }}
           >
-            Utility
-          </ScrollLink>
+            <FaTwitter style={{ marginRight: 5 }} />
+            Twitter
+          </a>
         </div>
-        <div className={styles.dropDownLinkContainer}>
-          <ScrollLink
-            to="map"
-            offset={width > 480 ? -71 : -56}
-            smooth
-            onClick={() => setIsActive(false)}
-            className={styles.dropDownLink}
-          >
-            Map
-          </ScrollLink>
-        </div>
-        <div className={styles.dropDownLinkContainer}>
-          <ScrollLink
-            to="faq"
-            offset={width > 480 ? -71 : -56}
-            smooth
-            onClick={() => setIsActive(false)}
-            className={styles.dropDownLink}
-          >
-            FAQ
-          </ScrollLink>
-        </div>
-        <div className={styles.dropDownLinkContainer}>
-          <Link href="/whitelist">
-            <a className={styles.dropDownLink} style={{ marginBottom: 10 }}>
-              Whitelist
-            </a>
-          </Link>
-        </div>
+<<<<<<< HEAD
         <a
           href="https://twitter.com/UnicornNodeClub"
           target="_blank"
@@ -212,6 +227,8 @@ const Nav = () => {
           Discord
         </a>
         <div style={{ marginBottom: 30 }}></div>
+=======
+>>>>>>> test
       </div>
     </div>
   );

@@ -1,13 +1,22 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .wrapper {
   background: #000;
-  padding: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-top: 1px solid #ffffff2c;
 }
 
 .container {
+  padding-top: 30px;
+  padding-bottom: 30px;
   max-width: 1000px;
   margin: auto;
-  padding-top: 16px;
-  padding-bottom: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,26 +29,18 @@
 }
 
 .title {
-  font-size: 100%;
-  font-weight: 600;
   color: #fff;
-}
-
-.socialContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .copyright {
-  font-size: 70%;
   color: #fff;
-  font-weight: 300;
+  font-size: 70%;
+  opacity: 0.7;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
   .title {
-    font-size: 70%;
+    font-size: 80%;
   }
   .copyright {
     font-size: 60%;

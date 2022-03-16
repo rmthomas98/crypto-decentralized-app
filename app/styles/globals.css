@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -11,91 +18,227 @@ body {
   font-weight: 400;
 }
 
-.rainbow-bg-container {
-  height: 600px;
+.homeContainer {
   width: 100%;
-  padding-left: 16px;
-  padding-right: 16px;
-  background-image: url("../public/images/banner.jpeg");
-  background-position: center;
+  height: 100vh;
+  padding: 16px;
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#000000),
+      to(#00000038)
+    ),
+    url("../public/images/planet-bg.jpeg");
+  background-image: -o-linear-gradient(#000000, #00000038),
+    url("../public/images/planet-bg.jpeg");
+  background-image: linear-gradient(#000000, #00000038),
+    url("../public/images/planet-bg.jpeg");
+  background-position: center right;
   background-size: cover;
+  min-height: 800px;
+}
+
+.container {
+  padding-top: 200px;
+}
+
+.smallTitle {
+  color: #ff00b39d;
+  text-align: center;
+  font-weight: 600;
+  font-size: 90%;
+}
+
+.title {
+  font-size: 450%;
+  color: #fff;
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+  text-shadow: 0px 0px 10px #ff00b3;
+  margin-bottom: 10px;
+}
+
+.btnContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin-top: 30px;
+}
+
+.viewMoreBtn {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  padding: 20px 50px;
+  border: 1px solid #ffffff9a;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ff91de),
+    to(#ff65d1)
+  );
+  background: -o-linear-gradient(#ff91de, #ff65d1);
+  background: linear-gradient(#ff91de, #ff65d1);
+  border-radius: 16px;
+  -webkit-box-shadow: 0px 8px 0 0 #b84595, 0px 8px 0px 1px #ffffff9a,
+    0px 14px 20px #ff00b36e;
+  box-shadow: 0px 8px 0 0 #b84595, 0px 8px 0px 1px #ffffff9a,
+    0px 14px 20px #ff00b36e;
+  cursor: pointer;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+  font-weight: 500;
+  font-size: 70%;
   position: relative;
 }
 
-h1 {
-  font-family: "Modak", cursive;
-  font-weight: 300;
-  font-size: 450%;
-  text-align: center;
+.viewMoreBtn:hover {
+  -webkit-transform: translateY(4px);
+  -ms-transform: translateY(4px);
+  transform: translateY(4px);
+  -webkit-box-shadow: 0px 4px 0 0 #8d3873, 0px 4px 0px 1px #ffffff9a,
+    0px 14px 40px #ff00b36e;
+  box-shadow: 0px 4px 0 0 #8d3873, 0px 4px 0px 1px #ffffff9a,
+    0px 14px 40px #ff00b36e;
 }
 
-.description-header {
-  font-weight: 600;
-  font-size: 80%;
-  max-width: 600px;
-  margin-left: auto;
-  text-align: center;
-  margin-right: auto;
-  line-height: 1.6;
-}
-
-.mint-button {
-  text-align: center;
-  margin-top: 30px;
-  padding: 14px 26px;
-  border-radius: 50px;
-  border: none;
-  background: -o-linear-gradient(45deg, #ff93bb, #ff5191);
-  background: linear-gradient(45deg, #ff93bb, #ff5191);
-  -webkit-box-shadow: 0px 10px 20px #0000004b;
-  box-shadow: 0px 10px 20px #0000004b;
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: 0.5px;
-  font-size: 80%;
-  font-weight: 600;
+.description {
   color: #fff;
+  max-width: 600px;
+  font-size: 90%;
+  margin: auto;
+  text-align: center;
+  line-height: 1.6;
+  font-weight: 300;
 }
 
-.cupcake {
-  height: 110px;
-  position: absolute;
-  bottom: -40px;
-  -webkit-transform: rotate(10deg);
-  -ms-transform: rotate(10deg);
-  transform: rotate(10deg);
+.externalBtnContainer {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.donut {
-  height: 110px;
-  position: absolute;
-  bottom: -50px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+.subBtn {
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 13.3px;
+  text-decoration: none;
+  background: #fff;
+  color: #000;
+  font-weight: 500;
+  border: 1px solid white;
+  position: relative;
+  cursor: pointer;
+  -webkit-box-shadow: 4px 5px 0px #000, 4px 5px 0px 1px #fff;
+  box-shadow: 4px 5px 0px #000, 4px 5px 0px 1px #fff;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-@media only screen and (max-width: 700px) {
-  h1 {
+.subBtn:hover {
+  -webkit-transform: translate(2px, 2px);
+  -ms-transform: translate(2px, 2px);
+  transform: translate(2px, 2px);
+  -webkit-box-shadow: 2px 3px 0px #000, 2px 3px 0px 1px #fff;
+  box-shadow: 2px 3px 0px #000, 2px 3px 0px 1px #fff;
+}
+
+.chevron {
+  -webkit-animation: bounce 2s infinite ease-in-out;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.chevronContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+::-moz-selection {
+  background: #3bffe5b6;
+}
+
+::selection {
+  background: #3bffe5b6;
+}
+
+@media only screen and (max-width: 800px) {
+  .title {
     font-size: 300%;
+  }
+  .description {
+    font-size: 80%;
+  }
+  .container {
+    padding-top: 140px;
   }
 }
 
-@media only screen and (max-width: 480px) {
-  h1 {
+@media only screen and (max-width: 500px) {
+  .title {
     font-size: 220%;
+  }
+  .description {
+    font-size: 75%;
+    line-height: 1.7;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
   }
 }

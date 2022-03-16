@@ -1,9 +1,19 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .wrapper {
-  padding: 10px 16px;
-  position: sticky;
-  z-index: 9999;
-  background: white;
+  position: fixed;
   top: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 16px;
+  background: #0000008e;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .container {
@@ -20,220 +30,93 @@
   align-items: center;
 }
 
-.title {
-  font-family: "Modak", cursive;
-  font-size: 170%;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#ff68a0),
-    to(#6bb7ff)
-  );
-  background: -o-linear-gradient(left, #ff68a0, #6bb7ff);
-  background: linear-gradient(90deg, #ff68a0, #6bb7ff);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  cursor: pointer;
-  -webkit-transition: 300ms;
-  -o-transition: 300ms;
-  transition: 300ms;
-}
-
-.title:hover {
-  -webkit-transform: scale(1.03);
-  -ms-transform: scale(1.03);
-  transform: scale(1.03);
-}
-
 .linkContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+}
+
+.navTitle {
+  font-weight: 700;
+  background: -o-linear-gradient(45deg, #ff18ba, #00e1ff);
+  background: linear-gradient(45deg, #ff18ba, #00e1ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .link {
-  font-size: 13px;
+  color: #fff;
+  font-size: 75%;
+  margin-right: 20px;
   font-weight: 600;
   cursor: pointer;
-  position: relative;
-  color: #80838f;
-  -webkit-transition: 100ms;
-  -o-transition: 100ms;
-  transition: 100ms;
-  text-decoration: none;
+  -webkit-transition: 400ms;
+  -o-transition: 400ms;
+  transition: 400ms;
 }
 
 .link:hover {
-  color: #000;
+  color: #ff18ba;
 }
 
-.link::after {
-  position: absolute;
-  top: 22px;
-  height: 2px;
-  width: 100%;
-  background: #ff68a0;
-  display: block;
-  content: "";
-  opacity: 0;
-  -webkit-transition: 600ms;
-  -o-transition: 600ms;
-  transition: 600ms;
-  -webkit-transform: translateY(10px);
-  -ms-transform: translateY(10px);
-  transform: translateY(10px);
-  pointer-events: none;
-}
-
-.link:last-of-type {
-  margin-right: 0px;
-}
-
-.link:hover::after {
-  opacity: 1;
-  -webkit-transform: translateY(0px);
-  -ms-transform: translateY(0px);
-  transform: translateY(0px);
-}
-
-.btnContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.twitterBtn {
-  margin-right: 8px;
-  background: -o-linear-gradient(45deg, #77d8ff, #00b7ff);
-  background: linear-gradient(45deg, #77d8ff, #00b7ff);
-  -webkit-box-shadow: 0px 7px 10px #00b7ff48;
-  box-shadow: 0px 7px 10px #00b7ff48;
-}
-
-.discordBtn {
-  background: -o-linear-gradient(45deg, #8993ff, #3545f0);
-  background: linear-gradient(45deg, #8993ff, #3545f0);
-  -webkit-box-shadow: 0px 7px 10px #3545f050;
-  box-shadow: 0px 7px 10px #3545f050;
-}
-
-.twitterBtn,
-.discordBtn {
-  font-family: "Montserrat", sans-serif;
-  font-size: 60%;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 50px;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-decoration: none;
-  -webkit-transition: 300ms;
-  -o-transition: 300ms;
-  transition: 300ms;
-}
-
-.twitterBtn:hover {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
-}
-
-.discordBtn:hover {
-  -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
-}
-
-.menu {
+.menu,
+.close {
   display: none;
-  cursor: pointer;
 }
 
-.menu:hover {
-  color: #00b7ff;
-  -webkit-transition: 200ms;
-  -o-transition: 200ms;
-  transition: 200ms;
-}
-
-.dropDownMenu {
-  position: absolute;
-  background: white;
+.dropdownMenu {
   width: 100%;
-  left: 0;
+  z-index: 9999;
   overflow: hidden;
-  -webkit-box-shadow: 0px 10px 10px #00000031;
-  box-shadow: 0px 10px 10px #00000031;
-  -webkit-transition: 1s ease;
-  -o-transition: 1s ease;
-  transition: 1s ease;
+  -webkit-transition: 800ms;
+  -o-transition: 800ms;
+  transition: 800ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
-.dropDownLink {
-  padding: 12px 16px;
-  font-size: 80%;
+.dropdownLink {
+  color: #fff;
+  font-size: 75%;
   font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: 400ms;
+  -o-transition: 400ms;
+  transition: 400ms;
   text-align: center;
   width: 100%;
-  cursor: pointer;
-  -webkit-transition: 200ms;
-  -o-transition: 200ms;
-  transition: 200ms;
-  text-decoration: none;
-  color: #000;
+  padding: 10px;
 }
 
-.dropDownLink:hover {
-  color: #00b7ff;
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.dropDownLinkContainer {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+.dropdownLink:hover {
+  color: #ff18ba;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 @media only screen and (max-width: 800px) {
-  .btnContainer {
-    display: none;
-  }
   .linkContainer {
     display: none;
   }
-  .menu {
+  .menu,
+  .close {
     display: block;
-    font-size: 30px;
+    font-size: 24px;
+    cursor: pointer;
   }
 }
 
-@media only screen and (max-width: 480px) {
-  .title {
-    font-size: 120%;
-  }
-  .menu {
-    font-size: 24px;
+@media only screen and (max-width: 600px) {
+  .navTitle {
+    height: 24px;
+    line-height: 24px;
+    font-size: 90%;
   }
 }

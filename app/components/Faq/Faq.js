@@ -1,209 +1,92 @@
 import styles from "./Faq.module.css";
-import { HiChevronDown } from "react-icons/hi";
+import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import { useState } from "react";
-import "animate.css/animate.min.css";
-import ScrollAnimation from "react-animate-on-scroll";
 
 const Faq = () => {
   const [num, setNum] = useState(null);
 
-  const handleNumChange = (value) => {
-    if (value === num) return setNum(null);
-    setNum(value);
-  };
-
   return (
     <div className={styles.wrapper} id="faq">
       <div className={styles.container}>
-        <ScrollAnimation animateIn="animate__fadeInUp">
-          <p className={styles.title}>FAQ</p>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="animate__fadeInUp">
-          <div
-            className={styles.accordianContainer}
-            onClick={() => handleNumChange(1)}
-            style={
-              num === 1
-                ? { maxHeight: 500, transition: "1s ease" }
-                : { maxHeight: 75, transition: "300ms ease" }
-            }
-          >
-            <div className={styles.questionContainer}>
-              <p className={styles.question}>Wen mint?</p>
-              <HiChevronDown
-                size={30}
-                color="#ff468a"
-                className={styles.chevron}
-                style={
-                  num === 1
-                    ? { transform: "rotate(180deg)" }
-                    : { transform: "rotate(0deg)" }
-                }
-              />
-            </div>
-            <div className={styles.answer}>
-              <p className={styles.description}>
-                Mint will be coming in the next couple weeks. Exact date will be
-                determined soon.
-              </p>
-            </div>
+        <p className={styles.header}>faq</p>
+        <div
+          className={styles.accordianContainer}
+          onClick={() => (num === 1 ? setNum(null) : setNum(1))}
+          style={{ marginTop: 50, height: num === 1 ? 120 : 71 }}
+        >
+          <div className={styles.questionContainer}>
+            <p className={styles.question}>Wen Mint?</p>
+            {num === 1 ? (
+              <AiOutlineMinusCircle color="#ff0303" />
+            ) : (
+              <AiOutlinePlusCircle color="#8aff03" />
+            )}
           </div>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="animate__fadeInUp">
-          <div
-            className={styles.accordianContainer}
-            onClick={() => handleNumChange(2)}
-            style={
-              num === 2
-                ? { maxHeight: 500, transition: "1s ease" }
-                : { maxHeight: 75, transition: "300ms ease" }
-            }
-          >
-            <div className={styles.questionContainer}>
-              <p className={styles.question}>What is the supply?</p>
-              <HiChevronDown
-                size={30}
-                color="#ff468a"
-                className={styles.chevron}
-                style={
-                  num === 2
-                    ? { transform: "rotate(180deg)" }
-                    : { transform: "rotate(0deg)" }
-                }
-              />
-            </div>
-            <div className={styles.answer}>
-              <p className={styles.description}>
-                There is a total of 5,000 unique Unicorns available to mint.
-              </p>
-            </div>
+          <p className={styles.answer}>April-May 2022</p>
+        </div>
+        <div
+          className={styles.accordianContainer}
+          onClick={() => (num === 2 ? setNum(null) : setNum(2))}
+          style={{ height: num === 2 ? 120 : 71 }}
+        >
+          <div className={styles.questionContainer}>
+            <p className={styles.question}>What is the supply?</p>
+            {num === 2 ? (
+              <AiOutlineMinusCircle color="#ff0303" />
+            ) : (
+              <AiOutlinePlusCircle color="#8aff03" />
+            )}
           </div>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="animate__fadeInUp">
-          <div
-            className={styles.accordianContainer}
-            onClick={() => handleNumChange(3)}
-            style={
-              num === 3
-                ? { maxHeight: 500, transition: "1s ease" }
-                : { maxHeight: 75, transition: "300ms ease" }
-            }
-          >
-            <div className={styles.questionContainer}>
-              <p className={styles.question}>What is mint price?</p>
-              <HiChevronDown
-                size={30}
-                color="#ff468a"
-                className={styles.chevron}
-                style={
-                  num === 3
-                    ? { transform: "rotate(180deg)" }
-                    : { transform: "rotate(0deg)" }
-                }
-              />
-            </div>
-            <div className={styles.answer}>
-              <p className={styles.description}>
-                The mint price will be 0.05 ETH.
-              </p>
-            </div>
+          <p className={styles.answer}>5,000</p>
+        </div>
+        <div
+          className={styles.accordianContainer}
+          onClick={() => (num === 3 ? setNum(null) : setNum(3))}
+          style={{ height: num === 3 ? 120 : 71 }}
+        >
+          <div className={styles.questionContainer}>
+            <p className={styles.question}>What is mint price?</p>
+            {num === 3 ? (
+              <AiOutlineMinusCircle color="#ff0303" />
+            ) : (
+              <AiOutlinePlusCircle color="#8aff03" />
+            )}
           </div>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="animate__fadeInUp">
-          <div
-            className={styles.accordianContainer}
-            onClick={() => handleNumChange(4)}
-            style={
-              num === 4
-                ? { maxHeight: 500, transition: "1s ease" }
-                : { maxHeight: 75, transition: "300ms ease" }
-            }
-          >
-            <div className={styles.questionContainer}>
-              <p className={styles.question}>What network?</p>
-              <HiChevronDown
-                size={30}
-                color="#ff468a"
-                className={styles.chevron}
-                style={
-                  num === 4
-                    ? { transform: "rotate(180deg)" }
-                    : { transform: "rotate(0deg)" }
-                }
-              />
-            </div>
-            <div className={styles.answer}>
-              <p className={styles.description}>
-                The Unicorns live on the ETH Network.
-              </p>
-            </div>
+          <p className={styles.answer}>0.05 ETH Public. 0.04 ETH WL</p>
+        </div>
+        <div
+          className={styles.accordianContainer}
+          onClick={() => (num === 4 ? setNum(null) : setNum(4))}
+          style={{ height: num === 4 ? 120 : 71 }}
+        >
+          <div className={styles.questionContainer}>
+            <p className={styles.question}>What network?</p>
+            {num === 4 ? (
+              <AiOutlineMinusCircle color="#ff0303" />
+            ) : (
+              <AiOutlinePlusCircle color="#8aff03" />
+            )}
           </div>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="animate__fadeInUp">
-          <div
-            className={styles.accordianContainer}
-            onClick={() => handleNumChange(5)}
-            style={
-              num === 5
-                ? { maxHeight: 500, transition: "1s ease" }
-                : { maxHeight: 75, transition: "300ms ease" }
-            }
-          >
-            <div className={styles.questionContainer}>
-              <p className={styles.question}>
-                Is there a whitelist or presale?
-              </p>
-              <HiChevronDown
-                size={30}
-                color="#ff468a"
-                className={styles.chevron}
-                style={
-                  num === 5
-                    ? { transform: "rotate(180deg)" }
-                    : { transform: "rotate(0deg)" }
-                }
-              />
-            </div>
-            <div className={styles.answer}>
-              <p className={styles.description}>
-                There will be a whitelist which will give you access to the
-                presale, there will be a limited amount whitelist spots.
-              </p>
-            </div>
+          <p className={styles.answer}>Ethereum Network</p>
+        </div>
+        <div
+          className={styles.accordianContainer}
+          onClick={() => (num === 5 ? setNum(null) : setNum(5))}
+          style={{
+            height: num === 5 ? 120 : 71,
+            borderBottom: "1px solid #ffffffad",
+          }}
+        >
+          <div className={styles.questionContainer}>
+            <p className={styles.question}>Is there a whitelist?</p>
+            {num === 5 ? (
+              <AiOutlineMinusCircle color="#ff0303" />
+            ) : (
+              <AiOutlinePlusCircle color="#8aff03" />
+            )}
           </div>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="animate__fadeInUp">
-          <div
-            className={styles.accordianContainer}
-            onClick={() => handleNumChange(6)}
-            style={
-              num === 6
-                ? { maxHeight: 500, transition: "1s ease" }
-                : { maxHeight: 75, transition: "300ms ease" }
-            }
-          >
-            <div className={styles.questionContainer}>
-              <p className={styles.question}>When will we do giveaways?</p>
-              <HiChevronDown
-                size={30}
-                color="#ff468a"
-                className={styles.chevron}
-                style={
-                  num === 6
-                    ? { transform: "rotate(180deg)" }
-                    : { transform: "rotate(0deg)" }
-                }
-              />
-            </div>
-            <div className={styles.answer}>
-              <p className={styles.description}>
-                We will start giveaways shortly after the mint. We will do
-                giveaways every week. If you own a unicorn, you will be
-                automatically entered.
-              </p>
-            </div>
-          </div>
-        </ScrollAnimation>
+          <p className={styles.answer}>Yes. 500 spots total.</p>
+        </div>
       </div>
     </div>
   );

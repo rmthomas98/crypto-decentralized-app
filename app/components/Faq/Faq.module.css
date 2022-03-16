@@ -1,36 +1,40 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .wrapper {
-  padding: 16px;
-  background: #f6f8ff;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 75px;
+  padding-bottom: 100px;
+  background: #000;
 }
 
 .container {
   max-width: 1000px;
   margin: auto;
-  padding-top: 75px;
-  padding-bottom: 75px;
+  max-width: 800px;
 }
 
-.title {
-  font-family: "Modak", cursive;
-  font-weight: 400;
-  font-size: 400%;
+.header {
+  font-family: "Bebas Neue", cursive;
+  font-size: 250%;
+  color: #fff;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .accordianContainer {
-  border-radius: 14px;
-  background: #fff;
-  min-height: 75px;
+  -webkit-transition: 700ms ease;
+  -o-transition: 700ms ease;
+  transition: 700ms ease;
   overflow: hidden;
-  margin-bottom: 15px;
-  -webkit-box-shadow: 0px 5px 20px #0000000d;
-  box-shadow: 0px 5px 20px #0000000d;
 }
 
 .questionContainer {
-  height: 75px;
-  padding-left: 16px;
-  padding-right: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,60 +44,40 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  border-top: 1px solid #ffffffad;
   cursor: pointer;
-}
-
-.question {
-  font-weight: 500;
-  -webkit-transition: 1s cubic-bezier(0.15, 1.36, 0.2, 1.05);
-  -o-transition: 1s cubic-bezier(0.15, 1.36, 0.2, 1.05);
-  transition: 1s cubic-bezier(0.15, 1.36, 0.2, 1.05);
+  height: 71px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .questionContainer:hover .question {
-  -webkit-transform: translateX(10px);
-  -ms-transform: translateX(10px);
-  transform: translateX(10px);
-  color: #ff468a;
+  color: #fff;
+}
+
+.question {
+  color: #ffffff90;
+  font-size: 90%;
+  font-weight: 300;
+  -webkit-transition: 400ms;
+  -o-transition: 400ms;
+  transition: 400ms;
 }
 
 .answer {
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-bottom: 16px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 80%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
 }
 
-.chevron {
-  -webkit-transition: 500ms;
-  -o-transition: 500ms;
-  transition: 500ms;
-}
-
-.description {
-  font-size: 85%;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-@media only screen and (max-width: 700px) {
-  .title {
-    font-size: 300%;
-    margin-bottom: 20px;
+@media only screen and (max-width: 500px) {
+  .header {
+    font-size: 200%;
   }
   .question {
     font-size: 85%;
-  }
-  .description {
-    font-size: 75%;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .title {
-    font-size: 220%;
-  }
-  .container {
-    padding-top: 50px;
-    padding-bottom: 50px;
   }
 }

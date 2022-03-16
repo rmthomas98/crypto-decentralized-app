@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <div className={styles.title}>Unicorn Nodes NFT</div>
-        <p className={styles.copyright}>&copy; Unicorn Nodes 2022</p>
+        <p className={styles.title}>UncornNodeClub</p>
+        <p className={styles.copyright}>&copy; UnicornNodeClub 2022</p>
       </div>
     </div>
   );
