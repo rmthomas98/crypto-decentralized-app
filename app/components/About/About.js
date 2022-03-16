@@ -1,15 +1,15 @@
 import styles from "./About.module.css";
 import Image from "next/image";
 import unicornOne from "../../public/images/unicornone.png";
-import unicornTwo from "../../public/images/unicornTwo.png";
-import unicornThree from "../../public/images/unicornThree.png";
-import unicornFour from "../../public/images/unicornFour.png";
+import unicornTwo from "../../public/images/unicorntwo.png";
+import unicornThree from "../../public/images/unicornthree.png";
+import unicornFour from "../../public/images/unicornfour.png";
 import unicornFive from "../../public/images/unicornfive.png";
 import unicornSix from "../../public/images/unicornsix.png";
 import unicornSeven from "../../public/images/unicornseven.png";
 import unicornEight from "../../public/images/unicorneight.png";
 import unicornNine from "../../public/images/unicornnine.png";
-import unicornTen from "../../public/images/unicornTen.png";
+import unicornTen from "../../public/images/unicornten.png";
 import Marquee from "react-fast-marquee";
 
 const About = () => {
