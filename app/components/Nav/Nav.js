@@ -67,29 +67,6 @@ const Nav = () => {
           <ScrollLink smooth to="faq" offset={-57} className={styles.link}>
             FAQ
           </ScrollLink>
-          <Link href="/whitelist">
-            <a className={styles.link}>WL</a>
-          </Link>
-        </div>
-        <div className={styles.btnContainer}>
-          <a
-            href="https://twitter.com/UnicornNodeClub"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.twitterBtn}
-          >
-            <AiOutlineTwitter style={{ marginRight: 5 }} size={16} />
-            Twitter
-          </a>
-          <a
-            href="https://discord.gg/TApxAGAw"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.discordBtn}
-          >
-            <FaDiscord style={{ marginRight: 5 }} size={16} />
-            Discord
-          </a>
         </div>
         {isActive ? (
           <IoMdClose
@@ -188,41 +165,6 @@ const Nav = () => {
             Twitter
           </a>
         </div>
-        <a
-          href="https://twitter.com/UnicornNodeClub"
-          target="_blank"
-          rel="noreferrer"
-          className={styles.twitterBtn}
-          style={{
-            marginRight: 0,
-            maxWidth: 250,
-            margin: "auto",
-            marginBottom: 20,
-            paddingTop: 10,
-            paddingBottom: 10,
-            width: "100%",
-          }}
-        >
-          <AiOutlineTwitter style={{ marginRight: 5 }} size={16} />
-          Twitter
-        </a>
-        <a
-          href="https://discord.gg/TApxAGAw"
-          target="_blank"
-          rel="noreferrer"
-          className={styles.discordBtn}
-          style={{
-            width: "100%",
-            maxWidth: 250,
-            margin: "auto",
-            paddingTop: 10,
-            paddingBottom: 10,
-          }}
-        >
-          <FaDiscord style={{ marginRight: 5 }} size={16} />
-          Discord
-        </a>
-        <div style={{ marginBottom: 30 }}></div>
       </div>
     </div>
   );

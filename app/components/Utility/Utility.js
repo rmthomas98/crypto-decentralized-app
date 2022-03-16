@@ -16,7 +16,7 @@ const Utility = () => {
         <div className={styles.flexContainer}>
           <div className={styles.greenCard}>
             <div className={styles.greenImageContainer}>
-              <Image src={planetOne} height={225} width={225} />
+              <Image src={planetOne} height={225} width={225} alt="planet" />
             </div>
             <p className={styles.cardTitle}>Giveaways</p>
             <p className={styles.cardDescription}>
@@ -26,7 +26,7 @@ const Utility = () => {
           </div>
           <div className={styles.redCard}>
             <div className={styles.redImageContainer}>
-              <Image src={planetThree} height={225} width={225} />
+              <Image src={planetThree} height={225} width={225} alt="planet" />
             </div>
             <p className={styles.cardTitle}>Investments</p>
             <p className={styles.cardDescription}>
@@ -36,7 +36,7 @@ const Utility = () => {
           </div>
           <div className={styles.purpleCard}>
             <div className={styles.purpleImageContainer}>
-              <Image src={planetTwo} height={225} width={225} />
+              <Image src={planetTwo} height={225} width={225} alt="planet" />
             </div>
             <p className={styles.cardTitle}>Distribution</p>
             <p className={styles.cardDescription}>
