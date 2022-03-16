@@ -11,7 +11,7 @@ import { AiFillBank, AiFillGift } from "react-icons/ai";
 
 const Map = () => {
   return (
-    <div className={styles.wrapper} id="map">
+    <div className={styles.wrapper} id="map" style={{overflowX: 'hidden'}}>
       <div className={styles.container}>
         <p className={styles.header}>Roadmap</p>
         <p className={styles.subHeader}>This is the path we plan to take.</p>
