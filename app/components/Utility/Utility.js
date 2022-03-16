@@ -6,7 +6,7 @@ import planetThree from "../../public/images/planet-3.png";
 
 const Utility = () => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id="tokenomics">
       <div className={styles.container}>
         <p className={styles.header}>Tokenomics</p>
         <p className={styles.subHeader}>

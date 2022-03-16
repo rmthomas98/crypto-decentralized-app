@@ -32,34 +32,94 @@ const About = () => {
       </div>
       <Marquee gradient={false} speed={100}>
         <div className={styles.imageContainer}>
-          <Image src={unicornOne} layout="fixed" height={300} width={300} />
+          <Image
+            src={unicornOne}
+            layout="fixed"
+            height={300}
+            width={300}
+            alt="Unicorn NFT"
+          />
         </div>
         <div className={styles.imageContainer}>
-          <Image src={unicornTwo} layout="fixed" height={300} width={300} />
+          <Image
+            src={unicornTwo}
+            layout="fixed"
+            height={300}
+            width={300}
+            alt="Unicorn NFT"
+          />
         </div>
         <div className={styles.imageContainer}>
-          <Image src={unicornThree} layout="fixed" height={300} width={300} />
+          <Image
+            src={unicornThree}
+            layout="fixed"
+            height={300}
+            width={300}
+            alt="Unicorn NFT"
+          />
         </div>
         <div className={styles.imageContainer}>
-          <Image src={unicornFour} layout="fixed" height={300} width={300} />
+          <Image
+            src={unicornFour}
+            layout="fixed"
+            height={300}
+            width={300}
+            alt="Unicorn NFT"
+          />
         </div>
         <div className={styles.imageContainer}>
-          <Image src={unicornFive} layout="fixed" height={300} width={300} />
+          <Image
+            src={unicornFive}
+            layout="fixed"
+            height={300}
+            width={300}
+            alt="Unicorn NFT"
+          />
         </div>
         <div className={styles.imageContainer}>
-          <Image src={unicornSix} layout="fixed" height={300} width={300} />
+          <Image
+            src={unicornSix}
+            layout="fixed"
+            height={300}
+            width={300}
+            alt="Unicorn NFT"
+          />
         </div>
         <div className={styles.imageContainer}>
-          <Image src={unicornSeven} layout="fixed" height={300} width={300} />
+          <Image
+            src={unicornSeven}
+            layout="fixed"
+            height={300}
+            width={300}
+            alt="Unicorn NFT"
+          />
         </div>
         <div className={styles.imageContainer}>
-          <Image src={unicornTen} layout="fixed" height={300} width={300} />
+          <Image
+            src={unicornTen}
+            layout="fixed"
+            height={300}
+            width={300}
+            alt="Unicorn NFT"
+          />
         </div>
         <div className={styles.imageContainer}>
-          <Image src={unicornEight} layout="fixed" height={300} width={300} />
+          <Image
+            src={unicornEight}
+            layout="fixed"
+            height={300}
+            width={300}
+            alt="Unicorn NFT"
+          />
         </div>
         <div className={styles.imageContainer}>
-          <Image src={unicornNine} layout="fixed" height={300} width={300} />
+          <Image
+            src={unicornNine}
+            layout="fixed"
+            height={300}
+            width={300}
+            alt="Unicorn NFT"
+          />
         </div>
       </Marquee>
     </div>

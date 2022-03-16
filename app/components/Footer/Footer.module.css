@@ -1,0 +1,48 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+.wrapper {
+  background: #000;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-top: 1px solid #ffffff2c;
+}
+
+.container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  max-width: 1000px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.title {
+  color: #fff;
+}
+
+.copyright {
+  color: #fff;
+  font-size: 70%;
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 500px) {
+  .title {
+    font-size: 80%;
+  }
+  .copyright {
+    font-size: 60%;
+  }
+}

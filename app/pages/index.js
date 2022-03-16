@@ -3,7 +3,8 @@ import Nav from "../components/Nav/Nav";
 import Utility from "../components/Utility/Utility";
 import HowItWorks from "../components/HowItWorks/HowItWorks";
 import Map from "../components/Map/Map";
-import Faq from '../components/Faq/Faq'
+import Faq from "../components/Faq/Faq";
+import Footer from "../components/Footer/Footer";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
 import { GiSailboat } from "react-icons/gi";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
@@ -17,11 +18,11 @@ const Home = () => {
         <title>Unicorn Nodes NFT</title>
         <meta
           name="description"
-          content="The Unicorn Node NFTs are a collection of 5,000 unique NFTs that are living on the ETH blockchain. Mint a Unicorn NFT, get exclusive access to weekly giveaways."
+          content="The Unicorn Node Club is a collection of 5,000 unique NFTs that are living on the ETH blockchain. Mint a Unicorn NFT, get exclusive access to weekly giveaways."
         />
         <meta
           name="keywords"
-          content="nft, crypto, defi, unicorn nodes, giveaway, ethereum, nodes, passive income"
+          content="nft, crypto, defi, unicorn node club, giveaway, ethereum, nodes, passive income"
         />
         <link
           rel="apple-touch-icon"
@@ -50,23 +51,39 @@ const Home = () => {
             passive income by winning weekly node giveaways!
           </p>
           <div className="btnContainer">
-            <ScrollLink to="about" smooth={true} className="viewMoreBtn">
+            <ScrollLink
+              to="about"
+              offset={-57}
+              smooth={true}
+              className="viewMoreBtn"
+            >
               Learn More
             </ScrollLink>
           </div>
           <div className="externalBtnContainer">
-            <button className="subBtn">
+            <a
+              href="https://discord.gg/TUHrMFAV"
+              rel="noreferrer"
+              target="_blank"
+              className="subBtn"
+              style={{ marginRight: 20 }}
+            >
               <FaDiscord style={{ marginRight: 5 }} />
               Discord
-            </button>
-            <button className="subBtn">
+            </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://twitter.com/UnicornNodeClub"
+              className="subBtn"
+            >
               <FaTwitter style={{ marginRight: 5 }} />
               Twitter
-            </button>
-            <button className="subBtn">
+            </a>
+            {/* <button className="subBtn">
               <GiSailboat style={{ marginRight: 5 }} />
               OpenSea
-            </button>
+            </button> */}
           </div>
         </div>
         <div className="chevronContainer">
@@ -82,6 +99,7 @@ const Home = () => {
       <HowItWorks />
       <Map />
       <Faq />
+      <Footer />
     </div>
   );
 };

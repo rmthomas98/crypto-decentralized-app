@@ -1,9 +1,15 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .wrapper {
   padding: 16px;
   height: 100vh;
   min-height: 500px;
   background: #f9faff;
-  background-image: linear-gradient(#00000031, #00000031),url('../public/images/mintbg.jpeg');
   background-position: center;
   background-size: cover;
 }
@@ -16,6 +22,7 @@
   background: #ffffff;
   margin-top: 50px;
   border-radius: 14px;
+  -webkit-box-shadow: 0px 10px 40px #0000002a;
   box-shadow: 0px 10px 40px #0000002a;
   padding: 30px;
   position: relative;
@@ -31,6 +38,7 @@
 .supplyContainer {
   padding: 20px;
   border-radius: 14px;
+  -webkit-box-shadow: 0px 0px 10px #00000021;
   box-shadow: 0px 0px 10px #00000021;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -69,7 +77,10 @@
   font-family: "Montserrat", sans-serif;
   background: #2395ff;
   color: #fff;
+  -webkit-box-shadow: 0px 5px 15px #2395ffbe;
   box-shadow: 0px 5px 15px #2395ffbe;
+  -webkit-transition: 500ms;
+  -o-transition: 500ms;
   transition: 500ms;
   cursor: pointer;
   position: absolute;
@@ -79,6 +90,7 @@
 }
 
 .connectBtn:hover {
+  -webkit-box-shadow: 0px 5px 25px #2395ff;
   box-shadow: 0px 5px 25px #2395ff;
   -webkit-transform: scale(0.97);
   -ms-transform: scale(0.97);
@@ -88,10 +100,12 @@
 .mintBtn {
   background: #ff3388;
   color: #fff;
+  -webkit-box-shadow: 0px 5px 15px #ff3388c2;
   box-shadow: 0px 5px 15px #ff3388c2;
 }
 
 .mintBtn:hover {
+  -webkit-box-shadow: 0px 5px 25px #ff3388;
   box-shadow: 0px 5px 25px #ff3388;
   -webkit-transform: scale(0.97);
   -ms-transform: scale(0.97);
@@ -112,8 +126,14 @@
 }
 
 .countContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 220px;
   margin: auto;
@@ -124,16 +144,30 @@
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 15px #0000002c;
   box-shadow: 0px 0px 15px #0000002c;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   cursor: pointer;
+  -webkit-transition: 300ms;
+  -o-transition: 300ms;
   transition: 300ms;
 }
 
 .changeCountBtn:hover {
+  -webkit-box-shadow: 0px 0px 5px #00000050, inset 0px 0px 2px #00000050;
   box-shadow: 0px 0px 5px #00000050, inset 0px 0px 2px #00000050;
+}
+
+.changeCountBtn::-moz-selection {
+  background: none;
 }
 
 .changeCountBtn::selection {
@@ -144,14 +178,19 @@
   margin-top: 20px;
 }
 
-
 .eth {
   font-size: 60%;
 }
 
 .ethereumPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-weight: 500;
   margin-top: 10px;
@@ -161,6 +200,15 @@
   width: 45px;
   font-size: 90%;
   margin-left: 5px;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {

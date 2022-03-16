@@ -1,8 +1,25 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .wrapper {
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 75px;
   padding-bottom: 100px;
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#000000d5),
+      to(#000000a2)
+    ),
+    url("../../public/images/map-bg.jpeg");
+  background-image: -o-linear-gradient(#000000d5, #000000a2),
+    url("../../public/images/map-bg.jpeg");
   background-image: linear-gradient(#000000d5, #000000a2),
     url("../../public/images/map-bg.jpeg");
   background-position: center;
@@ -10,8 +27,8 @@
 }
 
 .header {
-  font-family: "Bungee", cursive;
-  font-size: 220%;
+  font-family: "Bebas Neue", cursive;
+  font-size: 250%;
   color: #fff;
   text-align: center;
   margin-bottom: 20px;
@@ -21,4 +38,14 @@
   color: #fff;
   text-align: center;
   margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 500px) {
+  .header {
+    font-size: 200%;
+  }
+  .subHeader {
+    font-size: 80%;
+    line-height: 1.7;
+  }
 }

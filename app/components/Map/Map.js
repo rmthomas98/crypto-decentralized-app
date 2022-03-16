@@ -11,7 +11,7 @@ import { AiFillBank, AiFillGift } from "react-icons/ai";
 
 const Map = () => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id="map">
       <div className={styles.container}>
         <p className={styles.header}>Roadmap</p>
         <p className={styles.subHeader}>This is the path we plan to take.</p>
@@ -30,6 +30,7 @@ const Map = () => {
               border: "1px solid #71ffff",
               backdropFilter: "blur(5px)",
               boxShadow: "0px 0px 30px #71ffff51",
+              animationDuration: "1s",
             }}
             contentArrowStyle={{ borderRight: "7px solid #71ffff" }}
           >
@@ -64,6 +65,7 @@ const Map = () => {
               border: "1px solid #a94eff",
               backdropFilter: "blur(5px)",
               boxShadow: "0px 0px 30px #a94eff71",
+              animationDuration: "1s",
             }}
             contentArrowStyle={{ borderRight: "7px solid #a94eff" }}
           >
@@ -98,6 +100,7 @@ const Map = () => {
               border: "1px solid #4aff95",
               backdropFilter: "blur(5px)",
               boxShadow: "0px 0px 30px #4aff9551",
+              animationDuration: "1s",
             }}
             contentArrowStyle={{ borderRight: "7px solid #4aff95" }}
           >
@@ -132,6 +135,7 @@ const Map = () => {
               border: "1px solid #ff8c4a",
               backdropFilter: "blur(5px)",
               boxShadow: "0px 0px 30px #ff8c4a51",
+              animationDuration: "1s",
             }}
             contentArrowStyle={{ borderRight: "7px solid #ff8c4a" }}
           >
@@ -167,6 +171,7 @@ const Map = () => {
               border: "1px solid #ff4a4a",
               backdropFilter: "blur(5px)",
               boxShadow: "0px 0px 30px #ff4a4a51",
+              animationDuration: "1s",
             }}
             contentArrowStyle={{ borderRight: "7px solid #ff4a4a" }}
           >

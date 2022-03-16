@@ -1,38 +1,122 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .wrapper {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 9999;
   padding: 16px;
-  background: black;
+  background: #0000008e;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .container {
   max-width: 1000px;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .linkContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .navTitle {
-  color: #fff;
-  font-weight: 600;
+  font-weight: 700;
+  background: -o-linear-gradient(45deg, #ff18ba, #00e1ff);
+  background: linear-gradient(45deg, #ff18ba, #00e1ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .link {
   color: #fff;
-  font-size: 80%;
+  font-size: 75%;
   margin-right: 20px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
+  -webkit-transition: 400ms;
+  -o-transition: 400ms;
   transition: 400ms;
 }
 
 .link:hover {
-  color: #ff00b3;
+  color: #ff18ba;
+}
+
+.menu,
+.close {
+  display: none;
+}
+
+.dropdownMenu {
+  width: 100%;
+  z-index: 9999;
+  overflow: hidden;
+  -webkit-transition: 800ms;
+  -o-transition: 800ms;
+  transition: 800ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.dropdownLink {
+  color: #fff;
+  font-size: 75%;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: 400ms;
+  -o-transition: 400ms;
+  transition: 400ms;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.dropdownLink:hover {
+  color: #ff18ba;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+@media only screen and (max-width: 800px) {
+  .linkContainer {
+    display: none;
+  }
+  .menu,
+  .close {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navTitle {
+    height: 24px;
+    line-height: 24px;
+    font-size: 90%;
+  }
 }

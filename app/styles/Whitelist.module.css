@@ -10,18 +10,6 @@
   height: 100vh;
   min-height: 600px;
   width: 100%;
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(#0000001f),
-      to(#0000001f)
-    ),
-    url("../public/images/fantasy.jpeg");
-  background-image: -o-linear-gradient(#0000001f, #0000001f),
-    url("../public/images/fantasy.jpeg");
-  background-image: linear-gradient(#0000001f, #0000001f),
-    url("../public/images/fantasy.jpeg");
   background-position: center;
   background-size: cover;
 }
