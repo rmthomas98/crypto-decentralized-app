@@ -18,7 +18,7 @@ const About = () => {
       <p className={styles.header}>About</p>
       <div className={styles.container}>
         <p className={styles.description}>
-          The Unicorn Node Club is a collection of 5,000 unique Unicorns that
+          The Unicorn Node Club is a collection of 1,000 unique Unicorns that
           are living on the ETH network. These unicorns are very special
           though...they are not only the coolest looking unicorn ever, but they
           have so much more to offer you my fren!

@@ -37,7 +37,7 @@ const Faq = () => {
               <AiOutlinePlusCircle color="#8aff03" />
             )}
           </div>
-          <p className={styles.answer}>5,000</p>
+          <p className={styles.answer}>1,000</p>
         </div>
         <div
           className={styles.accordianContainer}
@@ -85,7 +85,7 @@ const Faq = () => {
               <AiOutlinePlusCircle color="#8aff03" />
             )}
           </div>
-          <p className={styles.answer}>Yes. 500 spots total.</p>
+          <p className={styles.answer}>Yes. 200 spots total.</p>
         </div>
       </div>
     </div>
