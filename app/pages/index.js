@@ -10,6 +10,8 @@ import { GiSailboat } from "react-icons/gi";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 import About from "../components/About/About";
 import { Link as ScrollLink } from "react-scroll";
+import "animate.css/animate.min.css";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const Home = () => {
   return (
@@ -45,7 +47,9 @@ const Home = () => {
       <Nav />
       <div className="homeContainer">
         <div className="container">
-          <p className="title">The Unicorn Node Club</p>
+          <AnimationOnScroll animateIn="animate__fadeInUp">
+            <p className="title">The Unicorn Node Club</p>
+          </AnimationOnScroll>
           <p className="description">
             Welcome frens, The Unicorn Node Club is a NFT where you can generate
             passive income by winning weekly node giveaways!
